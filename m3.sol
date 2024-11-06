@@ -55,3 +55,8 @@ conf_matrix = confusion_matrix(Y_test, y_pred)
 # Print the results
 print("Accuracy Score:", accuracy)
 print("Confusion Matrix:\n", conf_matrix)
+
+from imblearn.over_sampling import RandomOverSampler
+random = RandomOverSampler()
+X_train , Y_train = random.fit_resample(X_train,Y_train)
+Y_train.value_counts()
